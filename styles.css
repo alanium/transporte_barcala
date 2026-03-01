@@ -345,7 +345,7 @@ img {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 0 10px 40px rgba(194, 106, 53, 0.5);
 }
 
@@ -359,7 +359,7 @@ img {
   background: transparent;
   color: white;
   border-color: white;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .arrow-icon {
