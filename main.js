@@ -1,4 +1,4 @@
-const PHONE_NUMBER = "5491131486380";
+const PHONE_NUMBER = "5491128233925";
 
 const menuToggle = document.getElementById("menuToggle");
 const mainMenu = document.getElementById("mainMenu");
