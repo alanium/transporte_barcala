@@ -312,16 +312,17 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 50px;
-  padding: 1rem 2rem;
+  border-radius: 12px;
+  padding: 0.9rem 1.5rem;
   text-decoration: none;
   border: none;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  width: auto;
 }
 
 .btn-primary {
@@ -955,7 +956,7 @@ img {
     background: rgba(255, 252, 246, 0.98);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--line);
-    padding: 1rem;
+    padding: 0;
     box-shadow: var(--shadow-lg);
   }
 
@@ -964,9 +965,11 @@ img {
   }
 
   .menu a {
-    padding: 1rem 1.2rem;
+    padding: 1rem 1.5rem;
     border-top: 1px solid rgba(194, 106, 53, 0.1);
     border-radius: 0;
+    margin: 0 0.5rem;
+    width: calc(100% - 1rem);
   }
 
   .menu a:last-child {
@@ -993,28 +996,71 @@ img {
   }
 
   .contact-wrapper {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .form-actions {
     flex-direction: column;
   }
 
+  .form-actions .btn {
+    width: 100%;
+  }
+
   .panel {
-    padding: 1.5rem;
-  }
-
-  .logo-text {
-    display: none;
-  }
-
-  .topbar {
-    padding: 0.75rem 1rem;
+    padding: 1.25rem;
   }
 
   .btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.9rem 1.25rem;
+    font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .btn span {
+    font-size: 0.95rem;
+  }
+
+  .contact-container {
+    gap: 1.5rem;
+  }
+
+  .form-row {
+    gap: 0.75rem;
+  }
+
+  .fleet-gallery {
+    gap: 0.5rem;
+  }
+
+  .fleet-item {
+    padding: 0.2rem;
+  }
+
+  .fleet-item img {
+    height: 100px;
+  }
+
+  .contact-info {
+    gap: 0.75rem;
+  }
+
+  .info-card {
+    padding: 1rem;
+  }
+
+  .schedule-item {
+    padding: 0.75rem;
+  }
+
+  .section {
+    margin: 1rem auto;
   }
 }
 
