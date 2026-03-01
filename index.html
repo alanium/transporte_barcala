@@ -5,33 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Transporte Barcala - Mudanzas y fletes en Villa Tesei. Atencion rapida por WhatsApp, flota propia y cobertura en Buenos Aires."
+      content="Transporte Barcala - Mudanzas y fletes en Villa Tesei. Atencion rapida por WhatsApp, flota propia y cobertura en Buenos Aires. Servicio profesional y seguro."
     />
-    <title>Transporte Barcala | Mudanzas y Fletes</title>
+    <title>Transporte Barcala | Mudanzas y Fletes | Villa Tesei</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Manrope:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #c26a35 0%, #8f4d24 100%);
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .shadow-soft {
+        box-shadow: 0 20px 60px rgba(194, 106, 53, 0.2);
+      }
+      .shadow-glow {
+        box-shadow: 0 0 40px rgba(194, 106, 53, 0.3);
+      }
+      .btn-glow:hover {
+        box-shadow: 0 0 30px rgba(194, 106, 53, 0.6);
+      }
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(194, 106, 53, 0.25);
+      }
+      .floating {
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      .pulse {
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+      .fade-in {
+        animation: fadeIn 1s ease-out forwards;
+        opacity: 0;
+      }
+      @keyframes fadeIn {
+        to { opacity: 1; }
+      }
+      .slide-up {
+        animation: slideUp 0.8s ease-out forwards;
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      @keyframes slideUp {
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .delay-1 { animation-delay: 0.2s; }
+      .delay-2 { animation-delay: 0.4s; }
+      .delay-3 { animation-delay: 0.6s; }
+      .pulse-ring {
+        animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      }
+      @keyframes pulse-ring {
+        0% { transform: scale(0.8); opacity: 1; }
+        80%, 100% { transform: scale(1.3); opacity: 0; }
+      }
+    </style>
   </head>
   <body>
-    <header class="topbar" id="inicio">
+    <header class="topbar glass-effect">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
         <img src="./assets/logo.png" alt="Logo Transporte Barcala" />
-        <span>Transporte Barcala</span>
+        <span class="logo-text">Transporte Barcala</span>
       </a>
 
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Abrir menu">
-        Menu
+        <span class="hamburger"></span>
       </button>
 
       <nav class="menu" id="mainMenu">
-        <a href="#servicios">Servicios</a>
-        <a href="#flota">Flota</a>
-        <a href="#horarios">Horarios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#flota" class="nav-link">Flota</a>
+        <a href="#horarios" class="nav-link">Horarios</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="tel:+5491131486380" class="nav-link phone-link">📞 11-3148-6380</a>
       </nav>
     </header>
 
@@ -39,111 +104,337 @@
       <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <p class="kicker">Villa Tesei, Buenos Aires</p>
-          <h1>Mudanzas y fletes con atencion rapida y trato directo</h1>
-          <p class="hero-copy">
+          <div class="hero-badge fade-in">
+            <span class="badge-dot"></span>
+            <span>Villa Tesei, Buenos Aires</span>
+          </div>
+          <h1 class="slide-up">
+            Mudanzas y fletes con atencion rapida y trato directo
+          </h1>
+          <p class="hero-copy slide-up delay-1">
             Coordinamos tu traslado de forma simple: nos escribis, cotizamos y resolvemos.
             Servicio para hogares, oficinas y traslados puntuales.
           </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contacto">Pedir cotizacion</a>
-            <a class="btn btn-outline" href="tel:+5491131486380">Llamar ahora</a>
+          <div class="hero-actions slide-up delay-2">
+            <a class="btn btn-primary btn-glow" href="#contacto">
+              <span>Pedir cotizacion</span>
+              <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a class="btn btn-secondary" href="tel:+5491131486380">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Llamar ahora
+            </a>
+          </div>
+          <div class="trust-badges slide-up delay-3">
+            <div class="trust-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <span>100% Garantizado</span>
+            </div>
+            <div class="trust-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              <span>Servicio Puntual</span>
+            </div>
+            <div class="trust-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span>Equipo Profesional</span>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="servicios">
-        <div class="section-head">
-          <p class="kicker">Que hacemos</p>
-          <h2>Servicio claro, sin vueltas</h2>
+        <div class="section-header">
+          <div class="section-decoration"></div>
+          <div class="section-content">
+            <span class="kicker fade-in">¿Qué hacemos?</span>
+            <h2 class="slide-up">Servicio claro, sin vueltas</h2>
+          </div>
         </div>
-        <div class="cards">
-          <article class="card">
+        <div class="cards-container">
+          <article class="card card-hover fade-in">
+            <div class="card-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
             <h3>Mudanzas particulares</h3>
-            <p>Traslado de muebles, electrodomesticos y cajas con cuidado y puntualidad.</p>
+            <p>Traslado de muebles, electrodomésticos y cajas con cuidado y puntualidad. Manejamos todo tipo de cargas con protección especial.</p>
+            <a href="#contacto" class="card-link">Solicitar &rarr;</a>
           </article>
-          <article class="card">
+          <article class="card card-hover fade-in delay-1">
+            <div class="card-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="1.5">
+                <rect x="1" y="3" width="15" height="13"/>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
             <h3>Fletes programados</h3>
-            <p>Coordinacion por hora o franja para envios chicos y medianos.</p>
+            <p>Coordinación por hora o franja para envíos chicos y medianos. Servicio flexible que se adapta a tu horario.</p>
+            <a href="#contacto" class="card-link">Solicitar &rarr;</a>
           </article>
-          <article class="card">
-            <h3>Atencion por WhatsApp</h3>
-            <p>Pasanos origen y destino, y te respondemos con una estimacion rapida.</p>
+          <article class="card card-hover fade-in delay-2">
+            <div class="card-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="1.5">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </div>
+            <h3>Atención por WhatsApp</h3>
+            <p>Pasanos origen y destino, y te respondemos con una estimación rápida. Servicio de chat directo y confiable.</p>
+            <a href="https://wa.me/5491131486380" class="card-link">Contactar &rarr;</a>
           </article>
         </div>
       </section>
 
-      <section class="section section-soft" id="flota">
-        <div class="section-head">
-          <p class="kicker">Nuestra flota</p>
-          <h2>Vehiculos listos para cada traslado</h2>
-        </div>
-        <div class="fleet-grid">
-          <img src="./assets/image1.png" alt="Unidad de flota 1" loading="lazy" />
-          <img src="./assets/image2.png" alt="Unidad de flota 2" loading="lazy" />
-          <img src="./assets/image3.png" alt="Unidad de flota 3" loading="lazy" />
-          <img src="./assets/image4.png" alt="Unidad de flota 4" loading="lazy" />
+      <section class="section section-soft">
+        <div class="section-split">
+          <div class="section-left">
+            <div class="section-decoration"></div>
+            <div class="section-content">
+              <span class="kicker fade-in">Nuestra flota</span>
+              <h2 class="slide-up">Vehiculos listos para cada traslado</h2>
+              <p class="section-text slide-up delay-1">
+                Contamos con una flota variada adaptada a las necesidades de cada cliente. Desde movimientos domésticos hasta cargas comerciales, tenemos la unidad perfecta.
+              </p>
+            </div>
+          </div>
+          <div class="fleet-gallery">
+            <div class="fleet-item floating">
+              <img src="./assets/image1.png" alt="Unidad de flota 1" loading="lazy" />
+              <div class="fleet-overlay">
+                <span>Vehículo 1</span>
+              </div>
+            </div>
+            <div class="fleet-item floating" style="animation-delay: -2s;">
+              <img src="./assets/image2.png" alt="Unidad de flota 2" loading="lazy" />
+              <div class="fleet-overlay">
+                <span>Vehículo 2</span>
+              </div>
+            </div>
+            <div class="fleet-item floating" style="animation-delay: -4s;">
+              <img src="./assets/image3.png" alt="Unidad de flota 3" loading="lazy" />
+              <div class="fleet-overlay">
+                <span>Vehículo 3</span>
+              </div>
+            </div>
+            <div class="fleet-item floating" style="animation-delay: -6s;">
+              <img src="./assets/image4.png" alt="Unidad de flota 4" loading="lazy" />
+              <div class="fleet-overlay">
+                <span>Vehículo 4</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="section split" id="horarios">
         <div class="panel">
-          <p class="kicker">Disponibilidad</p>
-          <h2>Horarios de atencion</h2>
-          <ul class="schedule">
-            <li><strong>Lunes a Viernes</strong> 06:00 - 18:00</li>
-            <li><strong>Sabado y Domingo</strong> 06:00 - 18:00</li>
-          </ul>
-          <p class="location">Villa Tesei, Provincia de Buenos Aires</p>
+          <div class="panel-icon">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="panel-content">
+            <span class="kicker fade-in">Disponibilidad</span>
+            <h2 class="slide-up">Horarios de atención</h2>
+            <ul class="schedule">
+              <li class="schedule-item slide-up delay-1">
+                <div class="schedule-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                  </svg>
+                </div>
+                <div class="schedule-info">
+                  <strong>Lunes a Viernes</strong>
+                  <span>06:00 - 18:00</span>
+                </div>
+              </li>
+              <li class="schedule-item slide-up delay-2">
+                <div class="schedule-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div class="schedule-info">
+                  <strong>Sábado y Domingo</strong>
+                  <span>06:00 - 18:00</span>
+                </div>
+              </li>
+            </ul>
+            <p class="location slide-up delay-3">
+              📍 Villa Tesei, Provincia de Buenos Aires
+            </p>
+          </div>
         </div>
 
         <div class="panel map-panel">
-          <p class="kicker">Ubicacion</p>
-          <h2>Donde estamos</h2>
-          <iframe
-            title="Ubicacion de Transporte Barcala"
-            src="https://www.google.com/maps?q=-34.62693224571751,-58.6405821570769&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-          <a class="text-link" href="https://maps.google.com/?q=-34.62693224571751,-58.6405821570769" target="_blank" rel="noopener noreferrer">
-            Abrir en Google Maps
-          </a>
+          <div class="panel-icon">
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="1.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="panel-content">
+            <span class="kicker fade-in">Ubicación</span>
+            <h2 class="slide-up">Donde estamos</h2>
+            <div class="map-wrapper">
+              <iframe
+                title="Ubicacion de Transporte Barcala"
+                src="https://www.google.com/maps?q=-34.62693224571751,-58.6405821570769&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <a class="text-link" href="https://maps.google.com/?q=-34.62693224571751,-58.6405821570769" target="_blank" rel="noopener noreferrer">
+              📍 Abrir en Google Maps
+            </a>
+          </div>
         </div>
       </section>
 
       <section class="section" id="contacto">
-        <div class="section-head">
-          <p class="kicker">Contacto</p>
-          <h2>Pedinos una cotizacion en 1 minuto</h2>
-        </div>
-
-        <form class="contact-form" id="quoteForm">
-          <label>
-            Nombre
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            Origen
-            <input type="text" name="origin" required />
-          </label>
-          <label>
-            Destino
-            <input type="text" name="destination" required />
-          </label>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Enviar por WhatsApp</button>
-            <a class="btn btn-outline" href="tel:44501180">Llamar 4450-1180</a>
+        <div class="contact-wrapper">
+          <div class="contact-header">
+            <div class="contact-decoration"></div>
+            <div class="contact-content">
+              <span class="kicker fade-in">Contacto</span>
+              <h2 class="slide-up">Pedinos una cotizacion en 1 minuto</h2>
+            </div>
           </div>
-        </form>
+
+          <div class="contact-container">
+            <form class="contact-form" id="quoteForm">
+              <div class="form-row">
+                <div class="form-group fade-in">
+                  <label for="name">Nombre completo *</label>
+                  <input type="text" id="name" name="name" required placeholder="Tu nombre" />
+                </div>
+                <div class="form-group fade-in delay-1">
+                  <label for="phone">Teléfono</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Tu teléfono" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group fade-in delay-2">
+                  <label for="origin">Origen *</label>
+                  <input type="text" id="origin" name="origin" required placeholder="¿De dónde?" />
+                </div>
+                <div class="form-group fade-in delay-3">
+                  <label for="destination">Destino *</label>
+                  <input type="text" id="destination" name="destination" required placeholder="¿Hacia dónde?" />
+                </div>
+              </div>
+              <div class="form-group fade-in">
+                <label for="details">Detalles adicionales</label>
+                <textarea id="details" name="details" rows="3" placeholder="Cuéntanos más sobre tu traslado..."></textarea>
+              </div>
+              <div class="form-actions fade-in">
+                <button type="submit" class="btn btn-primary btn-glow">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>Enviar por WhatsApp</span>
+                </button>
+                <a class="btn btn-secondary" href="tel:44501180">
+                  📞 Llamar 4450-1180
+                </a>
+              </div>
+            </form>
+
+            <div class="contact-info fade-in delay-2">
+              <div class="info-card">
+                <div class="info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <h4>WhatsApp</h4>
+                  <p>11-3148-6380</p>
+                </div>
+              </div>
+              <div class="info-card fade-in delay-1">
+                <div class="info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <h4>Local</h4>
+                  <p>4450-1180</p>
+                </div>
+              </div>
+              <div class="info-card fade-in delay-2">
+                <div class="info-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c26a35" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <h4>Zona</h4>
+                  <p>Villa Tesei, BA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>Transporte Barcala <span id="year"></span> - Mudanzas y fletes</p>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span>Transporte Barcala</span>
+        </div>
+        <p>© <span id="year"></span> - Mudanzas y fletes profesionales en Villa Tesei</p>
+      </div>
+      <div class="footer-decorations">
+        <div class="footer-line"></div>
+      </div>
     </footer>
 
     <script src="./main.js"></script>
+    <script>
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in, .slide-up').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>
