@@ -604,13 +604,15 @@ img {
 .panel-icon {
   width: 72px;
   height: 72px;
-  background: linear-gradient(135deg, var(--brand), var(--brand-deep));
-  border-radius: 20px;
+  background: linear-gradient(135deg, #fff4ea, #ffe8d5);
+  border: 1px solid rgba(194, 106, 53, 0.24);
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  box-shadow: 0 10px 30px rgba(194, 106, 53, 0.3);
+  color: var(--brand);
+  box-shadow: 0 10px 24px rgba(194, 106, 53, 0.16);
 }
 
 .panel h2 {
@@ -649,6 +651,7 @@ img {
   width: 36px;
   height: 36px;
   background: white;
+  color: var(--brand);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -829,12 +832,13 @@ img {
 .info-icon {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, var(--brand), var(--brand-deep));
+  background: linear-gradient(135deg, #fff4ea, #ffe8d5);
+  border: 1px solid rgba(194, 106, 53, 0.24);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--brand);
   flex-shrink: 0;
 }
 
