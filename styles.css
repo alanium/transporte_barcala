@@ -87,11 +87,19 @@ img {
 
 .menu-toggle {
   display: none;
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   padding: 0;
   background: transparent;
   border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.menu-toggle:hover {
+  border-color: var(--brand);
+  background: rgba(194, 106, 53, 0.05);
 }
 
 .menu {
