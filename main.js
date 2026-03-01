@@ -10,6 +10,12 @@ if (yearTarget) {
 }
 
 if (menuToggle && mainMenu) {
+  const closeMenu = () => {
+    mainMenu.classList.remove("is-open");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
+
   menuToggle.addEventListener("click", () => {
     const isOpen = mainMenu.classList.toggle("is-open");
     menuToggle.classList.toggle("active");
@@ -18,10 +24,25 @@ if (menuToggle && mainMenu) {
 
   mainMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      mainMenu.classList.remove("is-open");
-      menuToggle.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
+      closeMenu();
     });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!mainMenu.classList.contains("is-open")) {
+      return;
+    }
+
+    const target = event.target;
+    if (target instanceof Node && !mainMenu.contains(target) && !menuToggle.contains(target)) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
   });
 }
 
