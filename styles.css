@@ -594,6 +594,8 @@ img {
   padding: 1.5rem;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-hover {
@@ -661,11 +663,46 @@ img {
   font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
+  margin-top: auto;
 }
 
 .card-link:hover {
   gap: 0.5rem;
   transform: translateX(5px);
+}
+
+.complement-grid {
+  align-items: stretch;
+}
+
+.service-media-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.service-media-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-media-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.service-media-content h3 {
+  margin-bottom: 0.65rem;
+  font-size: 1.25rem;
+}
+
+.service-media-content p {
+  margin-bottom: 1rem;
+  color: var(--muted);
 }
 
 /* Fleet Carousel */
@@ -1415,6 +1452,10 @@ img {
     max-width: 100%;
   }
 
+  .service-media-card img {
+    height: 190px;
+  }
+
   .carousel-track {
     width: 100%;
   }
@@ -1639,6 +1680,10 @@ img {
 
   .fleet-gallery {
     gap: 0.5rem;
+  }
+
+  .service-media-content {
+    padding: 1rem;
   }
 
   .fleet-card img {
