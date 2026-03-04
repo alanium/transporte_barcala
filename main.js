@@ -5,6 +5,87 @@ const mainMenu = document.getElementById("mainMenu");
 const quoteForm = document.getElementById("quoteForm");
 const yearTarget = document.getElementById("year");
 
+// Carousel functionality
+const carousel = document.querySelector(".fleet-carousel");
+const carouselTrack = document.querySelector(".carousel-track");
+const carouselSlides = document.querySelectorAll(".carousel-slide");
+const prevBtn = document.querySelector(".carousel-btn-prev");
+const nextBtn = document.querySelector(".carousel-btn-next");
+const dots = document.querySelectorAll(".carousel-dot");
+
+let currentSlide = 0;
+const totalSlides = carouselSlides.length;
+
+if (carousel && carouselTrack && prevBtn && nextBtn && dots.length > 0) {
+  const updateCarousel = () => {
+    carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    carouselSlides.forEach((slide, index) => {
+      slide.classList.toggle("active", index === currentSlide);
+    });
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentSlide);
+    });
+    prevBtn.disabled = currentSlide === 0;
+    nextBtn.disabled = currentSlide === totalSlides - 1;
+  };
+
+  const nextSlide = () => {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      updateCarousel();
+    }
+  };
+
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateCarousel();
+    }
+  };
+
+  const goToSlide = (index) => {
+    currentSlide = index;
+    updateCarousel();
+  };
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", nextSlide);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", prevSlide);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => goToSlide(index));
+  });
+
+  // Auto-play carousel
+  let autoPlayInterval;
+  const startAutoPlay = () => {
+    autoPlayInterval = setInterval(() => {
+      if (currentSlide < totalSlides - 1) {
+        nextSlide();
+      } else {
+        goToSlide(0);
+      }
+    }, 5000);
+  };
+
+  const stopAutoPlay = () => {
+    clearInterval(autoPlayInterval);
+  };
+
+  if (carousel) {
+    carousel.addEventListener("mouseenter", stopAutoPlay);
+    carousel.addEventListener("mouseleave", startAutoPlay);
+  }
+
+  // Initialize carousel
+  updateCarousel();
+  startAutoPlay();
+}
+
 if (yearTarget) {
   yearTarget.textContent = new Date().getFullYear();
 }
